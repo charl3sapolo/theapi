@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate, login
 
 class TheTaskList(generics.ListCreateAPIView):
     queryset = Task.objects.all()
-    serializer_class = TaskSerializer
+    serializer_class = TaskSerializer   
     
 class TheTask(generics.RetrieveUpdateDestroyAPIView):
     queryset = Task.objects.all()

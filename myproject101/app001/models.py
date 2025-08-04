@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 STATUS = {
+    "CURRENTLY HANDLED":"ON GOING",
     "COMPLETED":"DONE",
     "NOT COMPLETED":"NOT DONE",
 }

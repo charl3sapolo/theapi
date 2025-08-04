@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ["SECRET_KEY"]
+SECRET_KEY = 'django-insecure-2=bksvsr&ls6&w7%y3(a3-j*j9^i-z)f*z4h@d6smj#wvk(_^u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -34,11 +34,12 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'daphne',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app001',
-    'rest_framework',
+    'rest_framework',  
 ]
 
 MIDDLEWARE = [
@@ -107,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Dar_es_Salaam'
 
 USE_I18N = True
 
@@ -131,3 +132,6 @@ REST_FRAMEWORK = {
         # Remove SessionAuthentication to avoid CSRF issues
     ],
 }
+
+
+ASGI_APPLICATION = "myproject101.asgi.application"

@@ -19,7 +19,8 @@ class TheUserSerializer(serializers.ModelSerializer):
         )
         
 class TaskSerializer(serializers.ModelSerializer):
-    user = serializers.SlugRelatedField(queryset=User.objects.all(), slug_field='username')
+    #this is used to override the default repr of a foregin field on a json which is id instead specifies the the field to be presented
+    user = serializers.SlugRelatedField(queryset=User.objects.exclude(username__exact="mytask"), slug_field='username')
     class Meta:
         model = Task
         fields = ['id', 'user', 'task_name', 'task', 'task_status']

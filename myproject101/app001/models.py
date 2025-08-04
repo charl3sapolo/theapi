@@ -14,5 +14,5 @@ class Task(models.Model):
     task_date = models.DateTimeField(auto_now_add=True)
     task_status = models.CharField(max_length=100, choices=STATUS)
     
-    def formated_date(self):
+    def __str__(self):
         return f"{self.task_name} performed on {self.task_date.strftime('%d/%m/%Y at %H:%M')} by {self.user.first_name}"

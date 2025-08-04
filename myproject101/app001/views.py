@@ -36,5 +36,26 @@ class LoginUser(APIView):
                 serializer.errors, 
                 status=status.HTTP_400_BAD_REQUEST
             )
+
+class OnGoingTasks(generics.ListAPIView):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+    
+    def get_queryset(self):
+        return self.queryset.filter(task_status="CURRENTLY HANDLED")
+    
+class CompletedTasks(generics.ListAPIView):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+    
+    def get_queryset(self):
+        return self.queryset.filter(task_status="COMPLETED")
+
+class NotCompletedTasks(generics.ListAPIView):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+    
+    def get_queryset(self):
+        return self.queryset.filter(task_status="NOT COMPLETED")
         
     

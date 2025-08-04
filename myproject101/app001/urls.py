@@ -6,4 +6,7 @@ urlpatterns = [
     path('updatetask/<int:pk>/', views.TheTask.as_view()),
     path('createuser/', views.UserList.as_view()),
     path('loginuser/', views.LoginUser.as_view()),
+    path('currenttasks/', views.OnGoingTasks.as_view()),
+    path('currenttasks/', views.CompletedTasks.as_view()),
+    path('currenttasks/', views.NotCompletedTasks.as_view()),
 ]
